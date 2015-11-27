@@ -1,11 +1,11 @@
 require('normalize.css');
 require('styles/App.css');
 
-import React from 'react';
+import React, { Component, PropTypes } from 'react'
 import ImgRow from './ImgRow';
 import config from 'config'
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = { selected: this.props.source[0] };
@@ -13,16 +13,15 @@ class App extends React.Component {
   imgUrlx2(img) {
     return config.sourceUrl + img + App.defaultProps.x2;
   }
-  handleClick(img) {
-    this.setState({selected: img});
-  }
   render() {
+    const { dispatch, select, increment, imgSelected, source } = this.props
+    console.log(dispatch);
     let self = this;
     return (
       <div className="index">
         {
-          this.props.source.map(img =>
-              <ImgRow key={img} Img={img} handleClick={self.handleClick.bind(self, img)} />
+          source.map(img =>
+              <ImgRow key={img} Img={img} handleClick={select} />
           )
         }
         <div className="notice">
@@ -36,5 +35,9 @@ class App extends React.Component {
 App.defaultProps = {
   x2: "/2x"
 };
+
+App.propTypes = {
+  select: PropTypes.func.isRequired
+}
 
 export default App;

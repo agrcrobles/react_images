@@ -1,10 +1,12 @@
 export function increment() {
+  console.log("increment");
   return {
-    type: INCREMENT_COUNTER
+    type: ""
   }
 }
 
-export function selected() {
+export function select() {
+  console.log("increment");
   return (dispatch, getState) => {
     const { imgSelected } = getState()
 
