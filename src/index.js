@@ -23,7 +23,7 @@ const store = configureStore()
 
 render(
   <Provider store={store}>
-    <Counter />
+    <App Source={img}/>
   </Provider>,
   document.getElementById('app')
 )
