@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux'
 import counter from './counter'
-import img from './img'
+import imgs from './imgs'
+import imgSelected from './imgSelected'
 
 const rootReducer = combineReducers({
   counter,
-  img
+  imgs,
+  imgSelected
 })
 
 export default rootReducer

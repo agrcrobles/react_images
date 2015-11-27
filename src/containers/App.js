@@ -3,8 +3,9 @@ import { connect } from 'react-redux'
 import App from '../components/App'
 import * as ImgActions from '../actions/img'
 function mapStateToProps(state) {
+  console.log(state);
   return {
-    source: ["key2", "key1" ]
+    source: state.imgs
   }
 }
 
