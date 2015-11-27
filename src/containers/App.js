@@ -5,7 +5,8 @@ import * as ImgActions from '../actions/img'
 function mapStateToProps(state) {
   console.log(state);
   return {
-    source: state.imgs
+    source: state.imgs,
+    imgSelected: state.imgSelected
   }
 }
 
