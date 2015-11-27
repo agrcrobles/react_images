@@ -6,16 +6,12 @@ import ImgRow from './ImgRow';
 import config from 'config'
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
   imgUrlx2(img) {
     return config.sourceUrl + img + App.defaultProps.x2;
   }
   render() {
-    const { select, increment, imgSelected, source } = this.props
-    console.log(imgSelected);
-    let self = this;
+    const { select, imgSelected, source } = this.props
+
     return (
       <div className="index">
         {
