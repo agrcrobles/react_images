@@ -2,10 +2,9 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import App from '../components/App'
 import * as ImgActions from '../actions/img'
-
 function mapStateToProps(state) {
   return {
-    counter: state.counter
+    source: ["key2", "key1" ]
   }
 }
 
