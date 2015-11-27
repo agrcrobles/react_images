@@ -1,17 +1,15 @@
-export function increment() {
-  console.log("increment");
+export function doSelect(newVal) {
   return {
-    type: ""
+    newVal: newVal,
+    type: "onChange"
   }
 }
 
-export function select() {
-  console.log("increment");
+export function select(arg) {
+  console.log(arg);
   return (dispatch, getState) => {
+    //something to do with the current or new value?
     const { imgSelected } = getState()
-
-    console.log(imgSelected);
-
-    //dispatch(selected())
+    dispatch(doSelect(arg))
   }
 }

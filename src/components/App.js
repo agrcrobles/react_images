@@ -8,24 +8,23 @@ import config from 'config'
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { selected: this.props.source[0] };
   }
   imgUrlx2(img) {
     return config.sourceUrl + img + App.defaultProps.x2;
   }
   render() {
-    const { dispatch, select, increment, imgSelected, source } = this.props
-    console.log(dispatch);
+    const { select, increment, imgSelected, source } = this.props
+    console.log(imgSelected);
     let self = this;
     return (
       <div className="index">
         {
           source.map(img =>
-              <ImgRow key={img} Img={img} handleClick={select} />
+              <ImgRow key={img} Img={img} handleClick={() => select(img)} />
           )
         }
         <div className="notice">
-          <img src={this.imgUrlx2(this.state.selected)} />
+          <img src={this.imgUrlx2(imgSelected)} />
         </div>
       </div>
     );
