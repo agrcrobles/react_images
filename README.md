@@ -1,4 +1,4 @@
-# react_images
+# DEPRECATED: react_images
 
 Handle images list in react and redux
 
